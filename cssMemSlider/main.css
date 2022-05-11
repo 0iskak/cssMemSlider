@@ -37,6 +37,8 @@ input {
     --images-width: calc(100% * var(--images-count));
     --image-ratio: calc(100% / var(--images-count));
 
+    --animation-length: .4s;
+
     width: var(--width);
 
     display: grid;
@@ -56,17 +58,19 @@ input {
 
 .images > div {
     width: var(--image-ratio);
+    transition: margin-left var(--animation-length) ease-in-out;
 }
 
 .texts {
-    width: var(--images-width);
-    display: flex;
     color: #ECF0F1;
     font-size: .5em;
+    line-height: 90%;
+    position: relative;
 }
 
 .texts > div {
-    width: var(--image-ratio);
+    position: absolute;
+    opacity: 0;
 }
 
 .labels {
@@ -95,6 +99,8 @@ input {
 
     background-color: var(--dot-color);
     border: calc(var(--dot-size) * .3) solid var(--dot-color);
+
+    transition: background-color var(--animation-length), border-color var(--animation-length);
 }
 
 .labels > label:hover {
@@ -145,17 +151,31 @@ input {
 
 /* texts */
 #r1:checked ~ .texts > div:nth-of-type(1) {
-    margin-left: calc(0 * var(--image-ratio));
+    animation: opacity var(--animation-length) ease-in;
+    opacity: 1;
 }
 
-#r2:checked ~ .texts > div:nth-of-type(1) {
-    margin-left: calc(-1 * var(--image-ratio));
+#r2:checked ~ .texts > div:nth-of-type(2) {
+    animation: opacity var(--animation-length) ease-in;
+    opacity: 1;
 }
 
-#r3:checked ~ .texts > div:nth-of-type(1) {
-    margin-left: calc(-2 * var(--image-ratio));
+#r3:checked ~ .texts > div:nth-of-type(3) {
+    animation: opacity var(--animation-length) ease-in;
+    opacity: 1;
 }
 
-#r4:checked ~ .texts > div:nth-of-type(1) {
-    margin-left: calc(-3 * var(--image-ratio));
+#r4:checked ~ .texts > div:nth-of-type(4) {
+    animation: opacity var(--animation-length) ease-in;
+    opacity: 1;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

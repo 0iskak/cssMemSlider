@@ -187,3 +187,27 @@ input {
         opacity: 1;
     }
 }
+
+@media (max-device-width: 1024px) {
+    .slider {
+        --width-unit: 96;
+        --height-unit: 54;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: var(--height) repeat(2, var(--bottom-height));
+    }
+
+    .images {
+        grid-column: span 1;
+        order: 1;
+    }
+
+    .texts {
+        order: 3;
+    }
+
+    .labels {
+        justify-self: center;
+        order: 2;
+    }
+}

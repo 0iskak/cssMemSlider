@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    display: none;
+}
+
+.slider-wrapper {
+    --unit: min(1vw, 1vh);
+    --background-color: #2C3E50;
+
+    background-color: var(--background-color);
+    padding: calc(var(--unit) * 1.5);
+    border-radius: var(--unit);
+}
+
+.slider {
+    /* 16:9 for slides */
+    --width-unit: 80;
+    --height-unit: 45;
+    --width: calc(var(--width-unit) * var(--unit));
+    --height: calc(var(--height-unit) * var(--unit));
+
+    width: var(--width);
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: var(--height) calc(var(--height) * .1);
+    row-gap: calc(var(--height) * .05);
+
+    font-size: calc(var(--height) * .07);
+    overflow-x: hidden;
+}
+
+.images {
+    grid-column: span 2;
+    width: 400%;
+    display: flex;
+}
+
+.images > div {
+    --images-count: 4;
+
+    width: calc(100% / var(--images-count));
+}
+
+.texts {
+    width: 400%;
+    display: flex;
+    color: #ECF0F1;
+}
+
+.texts > div {
+    width: 25%;
+}
+
+.labels {
+    background-color: var(--background-color);
+}

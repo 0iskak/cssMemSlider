@@ -4,7 +4,6 @@
 }
 
 body {
-    width: 100vw;
     height: 100vh;
 
     display: flex;
@@ -188,7 +187,7 @@ input {
     }
 }
 
-@media (max-device-width: 1024px) {
+@media only screen and (max-width: 1024px) {
     .slider {
         --width-unit: 96;
         --height-unit: 54;

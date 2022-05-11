@@ -42,7 +42,7 @@ input {
     width: var(--width);
 
     display: grid;
-    grid-template-columns: auto max-content;
+    grid-template-columns: auto min-content;
     grid-template-rows: var(--height) var(--bottom-height);
     row-gap: calc(var(--height) * .05);
 
@@ -59,6 +59,15 @@ input {
 .images > div {
     width: var(--image-ratio);
     transition: margin-left var(--animation-length) ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images > div > img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .texts {
@@ -74,7 +83,6 @@ input {
 }
 
 .labels {
-    background-color: var(--background-color);
     display: flex;
 }
 

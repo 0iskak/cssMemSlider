@@ -105,7 +105,7 @@ body {
 
 #bullets > label > span {
     --bullet-size: .3em;
-    --bullet-border-size: .15em;
+    --bullet-border-size: .1em;
     --bullet-margin: .2em;
 
     height: var(--bullet-size);

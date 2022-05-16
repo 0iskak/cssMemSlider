@@ -185,7 +185,7 @@ body {
 
 /* bullets end */
 
-@media (max-width: 1024px) {
+@media (max-width: 540px) and (max-height: 720px) {
     #slider {
         --full-width: 95;
         --font-size: 5;
